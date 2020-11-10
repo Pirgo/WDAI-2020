@@ -1,10 +1,12 @@
 #img-red{
+    cursor: pointer;
     width: 1280px;
     height: auto;
     border: 5px solid red;
 }
 
 #img-blue{
+    cursor: pointer;
     width: 1280px;
     height: auto;
     border: 5px solid blue;
