@@ -1,0 +1,84 @@
+body {
+	font-size: 62.5%;
+	margin: 0px;
+	padding: 0px;
+	
+	
+}
+#content {
+	margin-left: 15px;
+	margin-top: 15px;
+	border: 1px dashed #999;
+	border-right: none;
+	border-bottom: none;
+	width: 1000px;
+	
+}
+p.caption {
+	font-size: 1.3em;
+	line-height: normal;
+	margin-bottom: 15px;
+}
+.figure{
+	float: left;
+	margin: 10px;
+	width: 220px;
+	height: 260px;
+	background-image: url("drop_shadow.gif");
+	background-size: 210px 210px;
+	background-repeat: no-repeat;
+	background-position: 60% 12%;
+	
+	
+
+}
+#gallery .figure p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	text-align: center;
+	line-height: normal;
+	
+}
+
+/* .figure{
+	float: left;
+	margin: 10px;
+	width: 220px;
+	height: 260px;
+	background-image: url("drop_shadow.gif");
+	background-size: 210px 210px;
+	background-repeat: no-repeat;
+	background-position: 60% 12%;
+	
+	
+
+} */
+
+#gallery{
+	width: 600px;
+}
+
+img{
+	border: 1px solid black;
+	padding: 5px;
+	/* background-image: url("drop_shadow.gif");
+	background-size: 200px 200px;
+	background-repeat: no-repeat;
+	background-position: 125% 0%; */
+	
+	
+}
+
+
+h1 {
+	font: normal 2.4em Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	border-bottom: 1px dashed #999;
+	padding: 5px 0 5px 8px;
+	color: #14556b;
+}
+p {
+	font: 1.6em/160% Georgia, "Times New Roman", Times, serif;
+	margin: 10px 8px;
+	
+}

@@ -1,0 +1,131 @@
+p#first{
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+p#sec{
+    background-color: rgb(8, 226, 215);
+    color: black;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 600px;
+    height: 200px;
+    overflow: scroll;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+p#third{
+    background-color:rgb(102, 255, 51);
+    color: rgb(0, 0, 153);
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 1150px;
+    height: 200px;
+}
+
+p#fourth{
+    background-color: rgb(216, 17, 206);
+    color: rgb(14, 5, 5);
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.t01{
+    width: 72%;
+    height: 600px;
+    border: 2px solid white;
+    border-collapse: collapse;
+    margin-bottom: 100px;
+}
+
+.tr01 > td, .tr01 > th{
+    background-color: rgb(79, 32, 250);
+    border: 2px solid white;
+    border-bottom: 5px solid white;
+}
+
+.tr02 > td, .tr02 > th{
+    background-color:  rgb(87, 87, 250);
+    border: 2px solid white;
+}
+
+.tr03 > td, .tr03 > th{
+    background-color:  rgb(190, 184, 252);
+    border: 2px solid white;
+}
+
+.t02{
+    width: 72%;
+    height: 400px;
+    border: 2px solid rgb(0, 0, 0);
+    border-collapse: collapse;
+    margin-bottom: 100px;
+}
+
+.tr11 > td, .tr11 > th{
+    background-color: rgb(36, 36, 36);
+    border: 2px solid black;
+    
+}
+
+.tr12 > td, .tr12 > th{
+    background-color: rgb(143, 143, 143);
+    border: 2px solid black;
+    
+}
+
+.Img{
+    height: 400px;
+    width: 600px;
+    display: block;
+}
+.Imgl{
+    height: 400px;
+    width: 600px;
+    float: left;
+    margin: 5px;
+    padding: 20px;
+}
+
+.Imgr{
+    height: 400px;
+    width: 700px;
+    float: right;
+    margin: 5px;
+    padding: 20px;
+}
+
+.Img2{
+    top: 400px;
+    position: relative;
+}
+.Img3{
+    bottom: 400px;
+    position: relative;
+}
+
+.Europe{
+    background-color:lightblue;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 100px;
+}
+
+.Asia{
+    background-color:red;
+    width: 100px;
+    height: 70px;
+    position: relative;
+    bottom: 90px;
+}

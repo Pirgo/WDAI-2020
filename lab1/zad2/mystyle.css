@@ -1,0 +1,72 @@
+.gridB{
+    background-color: lightgrey;
+    padding: 15px;
+    border: 1px solid black;
+
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 1px ;
+    background-color: black;
+    padding: 1px;
+
+}
+
+.top{
+    background-color: grey;
+    padding: 30px;
+    grid-column: 1/5;
+    text-align: center;
+    
+}
+
+.logo{
+    background-color: white;
+    border: 1px solid black;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    left: 35px;
+    top: 40px;
+    text-align: center;
+
+}
+
+.nav1{
+    background-color: whitesmoke;
+    text-align: center;
+    font-weight: bold;
+    padding: 40px;
+    
+}
+
+.nav2{
+    background-color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+.left-column{
+    grid-column: 1/2;
+    text-align: center;
+    background-color: white;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.pcontent{
+    grid-column: 2/5;
+    text-align: center;
+    background-color: white;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.footer{
+    background-color: grey;
+    padding: 30px;
+    grid-column: 1/5;
+    text-align: center;
+}
