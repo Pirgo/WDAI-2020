@@ -1,4 +1,4 @@
-const userlist = document.getElementById('username');
+
 
 function clickFunction(){
     const name = prompt("Podaj swoje imie");
