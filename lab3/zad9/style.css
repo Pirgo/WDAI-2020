@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#phoneBook li{
+    width: 50%;
+    height: 10vh;
+    margin: 0 auto;
+    background:whitesmoke;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgb(68, 68, 68, 0.2);
+    list-style-type: none;
+    position: relative;
+    margin-top: 10px;
+
+}
+
+#phoneBook li #name{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(0, -50%);
+    float: left;
+}
+
+#phoneBook li #trash{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(0, -50%);
+    display:inline-block;
+    font-size: 4vh;
+    line-height: 5vh;
+    background-color:rgb(26, 189, 61);
+    color:white;
+    width: 5vh;
+    height: 5vh;
+    text-align: center;
+    vertical-align: bottom;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#form{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    width: 50%;
+    /* height: 10vh; */
+    margin: 0 auto;
+    margin-top: 10px;
+    background:whitesmoke;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgb(68, 68, 68, 0.2);
+}
+
+#form input{
+    border: 1px solid #ddd;
+    padding: 10px;
+    
+}
+
+
+
+#form button{
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(26, 189, 61);
+    border-radius: 5px;
+}
+
+#form div{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 800px) {
+    #form {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
