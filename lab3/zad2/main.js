@@ -9,3 +9,4 @@ function changePhoto(){
         x[0].id = 'img-red'
     }
 }
+
