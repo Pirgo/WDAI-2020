@@ -1,0 +1,35 @@
+{
+    "Samochody":[
+        "Ferrari",
+        "Audi",
+        "Renault",
+        "Ford",
+        "Citroen"
+    ],
+    "Motocykle":[
+        "BMW",
+        "Ducati",
+        "Yamaha",
+        "Suzuki",
+        "Romet"
+    ],
+    "Soki":[
+        "Hortex",
+        "Tymbark",
+        "DrWit",
+        "Jupi"
+    ],
+    "Cukierki":[
+        "Nimm2",
+        "Zozole",
+        "Krówki",
+        "Tofii"
+    ],
+    "Płatki":[
+        "Czokapiki",
+        "Cini-minis",
+        "Kukurydziane",
+        "Nesquick"
+    ]
+
+}

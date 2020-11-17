@@ -1,0 +1,20 @@
+ul{
+    list-style: none;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container ul{
+    flex: 50%;
+}
+
+.flex-container div{
+    flex: 50%;
+}
+
+ul > li{
+    margin-left: 10px;
+}

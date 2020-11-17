@@ -1,0 +1,25 @@
+{
+    "Samochody":[
+        "Mercedes",
+        "Audi",
+        "Peugeot",
+        "Ford",
+        "Citroen"
+    ],
+    "Motocykle":[
+        "BMW",
+        "Junak",
+        "Yamaha",
+        "WSK"
+    ],
+    "Soki":[
+        "Kubuś",
+        "Tymbark",
+        "Frugo"
+    ],
+    "Płatki":[
+        "Poduszki",
+        "Musli"
+    ]
+
+}
