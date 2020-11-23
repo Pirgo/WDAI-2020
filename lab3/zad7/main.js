@@ -23,25 +23,27 @@ form.addEventListener('submit', (e) => {
         }
     }
 
-    if(birthday.value == '' || birthday.value == null){
-        messages.push('podaj urodziny')
-    }
+    // if(birthday.value == '' || birthday.value == null){
+    //     messages.push('podaj urodziny')
+    // }
 
-    if(retiring.value == '' || retiring.value == null){
-        messages.push('podaj kiedy chcesz przejsc na emeryture')
-    }
+    // if(retiring.value == '' || retiring.value == null){
+    //     messages.push('podaj kiedy chcesz przejsc na emeryture')
+    // }
 
-    if(phone.value.length < 9){
-        messages.push('Numer telefonu nie poprawny')
-    }
+    // if(phone.value.length < 9){
+    //     messages.push('Numer telefonu nie poprawny')
+    // }
 
-    if(name.value == '' || name.value == null){
-        messages.push('podaj imie')
-    }
+    // if(name.value == '' || name.value == null){
+    //     messages.push('podaj imie')
+    // }
 
-    if(lastname.value == '' || lastname.value == null){
-        messages.push('podaj nazwisko')
-    }
+    // if(lastname.value == '' || lastname.value == null){
+    //     messages.push('podaj nazwisko')
+    // }
+
+    
 
 
     if(messages.length > 0){

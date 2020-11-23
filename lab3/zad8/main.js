@@ -4,8 +4,14 @@ const btn = document.getElementById('getMax')
 function fMAX(arguments){
     let intarr = []
     let flag = true
+
+    if(arguments.length < 2){
+        document.getElementById('res').innerText = 'Podaj wiecej liczb'
+        return
+    }
+
     for(x of arguments){
-        if (isNaN(parseInt(x))){
+        if (isNaN(x)){
             flag = false
             break
         }

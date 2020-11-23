@@ -96,18 +96,22 @@ function addval(what, id){
 }
 
 function merge(file1, file2){
-    var res = Object.assign({}, file1, file2);
+    const res = Object.assign({}, file2, file1)
     for(const category in res){
         if(Object.keys(file1).includes(category)){
-            for(var i = 0; i < file1[category].length; i++){
-                if(!res[category].includes(file1[category][i])) res[category].push(file1[category][i]);
+            for(let i = 0; i<file1[category].length; i++){
+                if(!res[category].includes(file1[category][i])){
+                    res[category].push(file1[category][i]);
+                }
             }
         }
         if(Object.keys(file2).includes(category)){
-            for(var i = 0; i < file2[category].length; i++){
-                if(!res[category].includes(file2[category][i])) res[category].push(file2[category][i]);
+            for(let i = 0; i<file2[category].length; i++){
+                if(!res[category].includes(file2[category][i])){
+                    res[category].push(file2[category][i]);
+                }
             }
         }
     }
-    return res;
+    return res
 }

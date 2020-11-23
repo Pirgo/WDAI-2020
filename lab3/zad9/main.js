@@ -2,13 +2,26 @@ const btn = document.getElementById('btn')
 const phone = document.getElementById('phone')
 const names = document.getElementById('names')
 const ul = document.getElementById('phoneBook')
+const phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
+const namesvalidate = /^[a-z ,.'-]+$/i;
 
 var cnt = 1
-console.log(btn)
-console.log(phone)
-console.log(names)
-console.log(ul)
 btn.addEventListener('click', (e) =>{
+    if(phone.value == "" || phone.value == null || names.value == "" || names.value == null){
+        alert("Podaj wszystkie dane");
+        return;
+    }
+    if(!phone.value.match(phoneno)){
+        alert("Nr telefonu niepoprawny");
+        return;
+    }
+
+    if(!names.value.match(namesvalidate)){
+        alert("Imię i nazwisko jest błedne");
+        return;
+    }
+    
+    
     let li = document.createElement('li')
     li.setAttribute("id", `element${cnt}`)
     let div1 = document.createElement('div')
