@@ -60,7 +60,7 @@ function main(id, shooted, event){
         generateBallon();
     }
     else{
-        addResult(nick.innerText, points);
+        addResult(nick.innerText, points, getCurrentFormattedDate());
         gameArea.removeAttribute('onclick');
         gameArea.style.cursor = "default";
         changeBackgroundColor('white', 0);
@@ -68,6 +68,32 @@ function main(id, shooted, event){
         highcoresHeader.style.visibility = "visible";
 
     }
+}
+
+function getMonthStrings() {
+    return [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+    ];
+}
+
+function getCurrentFormattedDate(date) {
+    return (function () {
+        return getMonthStrings()[this.getMonth()] + ' ' + (function (d) {
+            var s = d.toString(), l = s[s.length - 1];
+            return s + (['st', 'nd', 'rd'][l - 1] || 'th');
+        })(this.getDate()) + ', ' + this.getFullYear() + ' ' + ('0' + (this.getHours() % 12 || 12)).slice(-2) + ':' + ('0' + this.getMinutes()).slice(-2) + ':' + ('0' + this.getSeconds()).slice(-2) + ' ' + (this.getHours() >= 12 ? 'PM' : 'AM');
+    }).call(date || new Date());
 }
 
 function generateBallon(){
@@ -156,11 +182,12 @@ playAgainBtn.addEventListener('click', function(){
     init();
 })
 //jednoczesnie dodaje nowy wynik, sortuje, i usuwam zbedne
-async function addResult(playerName, playerResult){
+async function addResult(playerName, playerResult, resDate){
     highScoreData = await getData()
     console.log(highScoreData)
     const data = {nick : playerName,
-                  res: playerResult.toFixed(2)};
+                  res: playerResult.toFixed(2),
+                  date: resDate};
     highScoreData.results.push(data);
     console.log(highScoreData.results)
     highScoreData.results.sort(function(a,b){
@@ -197,14 +224,17 @@ async function updateTable(){
         const index = document.createElement('td');
         const myName = document.createElement('td');
         const myScore = document.createElement('td');
+        const myDate = document.createElement('td');
         const myTr = document.createElement('tr');
 
         index.innerText = `${i+1}.`
         myName.innerText = highScoreData.results[i].nick;
         myScore.innerText = highScoreData.results[i].res;
+        myDate.innerText = String(highScoreData.results[i].date);
         myTr.appendChild(index);
         myTr.appendChild(myName);
         myTr.appendChild(myScore);
+        myTr.appendChild(myDate);
         highScoresTable.appendChild(myTr);
     }
 }
