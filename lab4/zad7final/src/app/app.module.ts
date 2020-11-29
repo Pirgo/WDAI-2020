@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { TripComponent } from './trips/trip/trip.component';
 import { BookedTripsComponent } from './trips/booked-trips/booked-trips.component';
 import { AddTripComponent } from './trips/add-trip/add-trip.component';
+import { RateTripsComponent } from './trips/rate-trips/rate-trips.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -15,12 +17,14 @@ import { AddTripComponent } from './trips/add-trip/add-trip.component';
     TripComponent,
     BookedTripsComponent,
     AddTripComponent,
+    RateTripsComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,7 @@ export class TripComponent implements OnInit {
   @Input() index;
   @Output() updateBookedTrips = new EventEmitter<number>()
   placesBooked: number = 0;
+  raiting: number =2;
   constructor() { }
 
   ngOnInit(): void {
@@ -58,14 +59,14 @@ export class TripComponent implements OnInit {
   }
 
   deleteTrip(){
-    console.log(this.index)
-    if(this.index == 0){
-      trips.shift();
+    if(this.placesBooked > 0){
+      this.updateBookedTrips.emit(-1);
     }
-    else{
-      trips.splice(this.index, this.index)
-    }
-    
+      trips.splice(this.index, 1)
+  }
+
+  updateRaiting(cnt){
+    this.raiting = cnt;
   }
 
 

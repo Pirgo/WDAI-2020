@@ -1,6 +1,6 @@
 <div class="header">
     <h2 class="header-item">{{trip.name | uppercase}}</h2>
-    <p>ratingcomponent</p>
+    <app-rate-trips [(currentRate)]="raiting"></app-rate-trips>
 </div>
 <div class="text-centered">
     <h3>{{trip.destination | uppercase}}</h3>
@@ -19,3 +19,4 @@
     <button (click) = "rmvReservation()" [ngStyle]="styleDisplayRmvBtn()">Remove</button>
     <button (click)="deleteTrip()">Delete</button>
 </div>
+
