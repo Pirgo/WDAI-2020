@@ -1,0 +1,7 @@
+
+<!-- <router-outlet></router-outlet> -->
+<app-booked-trips [counter]="bookedTrips"></app-booked-trips>
+<div class="flex-container">
+  <app-trip class="flex-item" *ngFor="let trip of trips; index as i" [ngStyle]="maxOrMin(trip)" [trip]="trip" [index]="i" (updateBookedTrips)=updatebookedTrips($event)></app-trip>
+</div>
+<app-add-trip></app-add-trip>

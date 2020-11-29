@@ -1,0 +1,21 @@
+<div class="header">
+    <h2 class="header-item">{{trip.name | uppercase}}</h2>
+    <p>ratingcomponent</p>
+</div>
+<div class="text-centered">
+    <h3>{{trip.destination | uppercase}}</h3>
+    <h3>{{trip.beginDate}} - {{trip.endDate}}</h3>
+</div>
+<div class="main">
+    <img  class="main-item" src="{{trip.imgURL}}" alt="">
+    <div class="main-item">{{trip.description}}</div>
+</div>
+<h3 class="text-centered margin-bot"> Only {{trip.price | currency}}</h3>
+<div *ngIf="noPlacesLeft()">No places left</div>
+<div *ngIf="somePlacesLeft()">Last places available</div>
+<div class="footer">
+    <h3 class="footer-item-places">Places: {{placesBooked}}/{{trip.maxCapacity}}</h3>
+    <button (click) = "addReservation()" [ngStyle]="styleDisplayAddBtn()">Add</button>
+    <button (click) = "rmvReservation()" [ngStyle]="styleDisplayRmvBtn()">Remove</button>
+    <button (click)="deleteTrip()">Delete</button>
+</div>

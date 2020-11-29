@@ -1,0 +1,24 @@
+<p>zad5 works!</p>
+
+
+<div *ngFor="let car of tmp">
+    <span>
+        <input type="checkbox" name="" id="" (change) = "change($event)"> {{car.brand}} 
+    </span>
+    <ul style="display: none;">
+        <div *ngFor="let model of car.model; index as i">
+            <span>
+                <input type="checkbox" name="" id="" (change) = "change($event)">{{model}}
+            </span>
+            <ul style="display: none;">
+                <div *ngFor="let color of car.color[i]">
+                    <span>
+                        <input type="checkbox" name="" id=""> {{color}}
+                    </span>
+                </div>
+            </ul>
+            
+        </div>
+    </ul>
+    
+</div>
