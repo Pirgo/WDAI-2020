@@ -191,7 +191,7 @@ async function addResult(playerName, playerResult, resDate){
     highScoreData.results.push(data);
     console.log(highScoreData.results)
     highScoreData.results.sort(function(a,b){
-        return b.res - a.res;
+        return parseInt(b.res) - parseInt(a.res);
     })
     if(highScoreData.results.length > 7){
         highScoreData.results.pop();
