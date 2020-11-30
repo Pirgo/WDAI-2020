@@ -1,5 +1,17 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { trips } from '../../trips'
+
+export interface Trip{
+  name: string
+  destination: string
+  beginDate: string
+  endDate: any
+  price: number
+  maxCapacity: number
+  description: string
+  imgURL: string
+}
+
 @Component({
   selector: 'app-trip',
   templateUrl: './trip.component.html',

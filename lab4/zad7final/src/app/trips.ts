@@ -1,9 +1,11 @@
-export let trips = [
+import {Trip} from './trips/trip/trip.component'
+
+export let trips: Trip[] = [
     {
         name: 'first',
         destination: 'Poland',
-        beginDate: '2/4/2020',
-        endDate: '9/4/2020',
+        beginDate: '2020-04-02',
+        endDate: '2020-04-12',
         price: 136,
         maxCapacity: 10,
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos exercitationem natus voluptas omnis voluptates quisquam eligendi earum nisi impedit, voluptate distinctio saepe ducimus officiis quas excepturi corporis nobis vitae?',
@@ -12,8 +14,8 @@ export let trips = [
     {
         name: 'second',
         destination: 'Poland',
-        beginDate: '2/4/2020',
-        endDate: '9/4/2020',
+        beginDate: '2020-04-02',
+        endDate: '2020-04-12',
         price: 864,
         maxCapacity: 10,
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos exercitationem natus voluptas omnis voluptates quisquam eligendi earum nisi impedit, voluptate distinctio saepe ducimus officiis quas excepturi corporis nobis vitae?',
@@ -21,9 +23,9 @@ export let trips = [
     },
     {
         name: 'third',
-        destination: 'Poland',
-        beginDate: '2/4/2020',
-        endDate: '9/4/2020',
+        destination: 'USA',
+        beginDate: '2020-04-02',
+        endDate: '2020-04-12',
         price: 1672,
         maxCapacity: 10,
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos exercitationem natus voluptas omnis voluptates quisquam eligendi earum nisi impedit, voluptate distinctio saepe ducimus officiis quas excepturi corporis nobis vitae?',
@@ -31,9 +33,9 @@ export let trips = [
     },
     {
         name: 'fourth',
-        destination: 'Poland',
-        beginDate: '2/4/2020',
-        endDate: '9/4/2020',
+        destination: 'UK',
+        beginDate: '2020-04-02',
+        endDate: '2020-04-12',
         price: 145,
         maxCapacity: 10,
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos exercitationem natus voluptas omnis voluptates quisquam eligendi earum nisi impedit, voluptate distinctio saepe ducimus officiis quas excepturi corporis nobis vitae?',
@@ -41,9 +43,9 @@ export let trips = [
     },
     {
         name: 'fifth',
-        destination: 'Poland',
-        beginDate: '2/4/2020',
-        endDate: '9/4/2020',
+        destination: 'Italy',
+        beginDate: '2020-04-02',
+        endDate: '2020-04-12',
         price: 523,
         maxCapacity: 10,
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos exercitationem natus voluptas omnis voluptates quisquam eligendi earum nisi impedit, voluptate distinctio saepe ducimus officiis quas excepturi corporis nobis vitae?',
@@ -51,9 +53,9 @@ export let trips = [
     },
     {
         name: 'sixth',
-        destination: 'Poland',
-        beginDate: '2/4/2020',
-        endDate: '9/4/2020',
+        destination: 'Germany',
+        beginDate: '2020-04-02',
+        endDate: '2020-04-12',
         price: 533,
         maxCapacity: 10,
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos exercitationem natus voluptas omnis voluptates quisquam eligendi earum nisi impedit, voluptate distinctio saepe ducimus officiis quas excepturi corporis nobis vitae?',
@@ -61,9 +63,9 @@ export let trips = [
     },
     {
         name: 'seventh',
-        destination: 'Poland',
-        beginDate: '2/4/2020',
-        endDate: '9/4/2020',
+        destination: 'France',
+        beginDate: '2020-04-02',
+        endDate: '2020-04-12',
         price: 5124,
         maxCapacity: 10,
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos exercitationem natus voluptas omnis voluptates quisquam eligendi earum nisi impedit, voluptate distinctio saepe ducimus officiis quas excepturi corporis nobis vitae?',
@@ -72,8 +74,8 @@ export let trips = [
     {
         name: 'eighth',
         destination: 'Poland',
-        beginDate: '2/4/2020',
-        endDate: '9/4/2020',
+        beginDate: '2020-04-02',
+        endDate: '2020-04-12',
         price: 400,
         maxCapacity: 10,
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos exercitationem natus voluptas omnis voluptates quisquam eligendi earum nisi impedit, voluptate distinctio saepe ducimus officiis quas excepturi corporis nobis vitae?',

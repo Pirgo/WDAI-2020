@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators, AbstractControl } from "@angular/forms";
 import {trips} from '../../trips'
+import {later} from '../end-date'
 @Component({
   selector: 'app-add-trip',
   templateUrl: './add-trip.component.html',
@@ -12,6 +13,7 @@ export class AddTripComponent implements OnInit {
   constructor(private formBuilder : FormBuilder) { }
 
   ngOnInit(): void {
+    
     this.tripForm = this.formBuilder.group({
       name: ['', Validators.required],
       destination: ['', Validators.required],
@@ -20,14 +22,18 @@ export class AddTripComponent implements OnInit {
       price: ['', Validators.required],
       maxCapacity: ['', Validators.required],
       description: ['', Validators.required],
-      imgURL: ['', Validators.required],
-      currentplace: 0
+      imgURL: ['', Validators.required]
     })
+    this.tripForm.markAsUntouched();
   }
   onSubmit(form){
-    console.log(form.value)
+    console.log(form.value.beginDate)
     trips.push(form.value)
     console.log(trips);
   }
 
+  
+  
+  
 }
+
