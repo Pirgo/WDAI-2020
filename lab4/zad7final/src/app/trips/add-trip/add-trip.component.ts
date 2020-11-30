@@ -49,12 +49,3 @@ export class AddTripComponent implements OnInit {
   
 }
 
-function validateDate(param: string): ValidatorFn{
-  return (control: AbstractControl): {[key: string]: any} | null =>{
-    if(control.value != param){
-      return {'dateValid' : true}
-    }
-    return null
-  }
-}
-
