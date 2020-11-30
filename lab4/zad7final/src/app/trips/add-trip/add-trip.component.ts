@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidatorFn } from "@angular/forms";
 import {trips} from '../../trips'
-import {later} from '../end-date'
 @Component({
   selector: 'app-add-trip',
   templateUrl: './add-trip.component.html',
@@ -10,6 +9,7 @@ import {later} from '../end-date'
 export class AddTripComponent implements OnInit {
   tripForm : FormGroup;
   // trips = trips;
+  begindate: string
   constructor(private formBuilder : FormBuilder) { }
 
   ngOnInit(): void {
@@ -23,17 +23,38 @@ export class AddTripComponent implements OnInit {
       maxCapacity: ['', Validators.required],
       description: ['', Validators.required],
       imgURL: ['', Validators.required]
+      
     })
     this.tripForm.markAsUntouched();
   }
+
+  getBeginDateAndValid(form){
+    let begin = form.get('beginDate').value
+    let end = form.get('endDate').value
+    if((end != '' || end != null) && (begin != '' || begin !=null)){
+      return !form.valid || !(begin < end)
+    }
+    return !form.valid
+    
+    
+  }
   onSubmit(form){
-    console.log(form.value.beginDate)
     trips.push(form.value)
+    this.tripForm.reset();
     console.log(trips);
   }
 
   
   
   
+}
+
+function validateDate(param: string): ValidatorFn{
+  return (control: AbstractControl): {[key: string]: any} | null =>{
+    if(control.value != param){
+      return {'dateValid' : true}
+    }
+    return null
+  }
 }
 

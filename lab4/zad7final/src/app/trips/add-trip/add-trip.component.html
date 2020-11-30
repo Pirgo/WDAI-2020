@@ -20,7 +20,7 @@
             <input class="center-input" type="date" name="endDate" formControlName="endDate" placeholder="dd.mm.yyyy">
         </div>
         <p *ngIf = "tripForm.get('endDate').touched && tripForm.get('endDate').invalid" style="color: red;">End date is required</p>
-        <p *ngIf = "tripForm.get('endDate').value < tripForm.get('beginDate').value">dff</p>
+        <p *ngIf = "(tripForm.get('endDate').value < tripForm.get('beginDate').value) && (tripForm.get('endDate').value!= '' && tripForm.get('endDate').value!= null)" style="color: red;">Wrong date</p>
         <div>
             <label>Price:</label><br>
             <input  class="center-input" type="number" name="price" formControlName="price">
@@ -42,6 +42,6 @@
             <input class="center-input" name="imgURL" formControlName="imgURL">
         </div>
         <p *ngIf = "tripForm.get('imgURL').touched && tripForm.get('imgURL').invalid" style="color: red;">IMG URL is required</p>
-        <button class="btn1" type="submit" [disabled]="!tripForm.valid">SUBMIT</button>
+        <button class="btn1" type="submit" [disabled]="getBeginDateAndValid(tripForm)">SUBMIT</button>
     </form>
 </div>
