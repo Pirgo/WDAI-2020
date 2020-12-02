@@ -10,6 +10,8 @@ export interface Trip{
   maxCapacity: number
   description: string
   imgURL: string
+  raiting: number
+  places: number
 }
 
 @Component({
@@ -19,24 +21,34 @@ export interface Trip{
 })
 export class TripComponent implements OnInit {
   @Input() trip;
-  @Input() index;
+  // @Input() index;
   @Output() updateBookedTrips = new EventEmitter<number>()
-  placesBooked: number = 0;
-  raiting: number =2;
+  @Output() addToCart = new EventEmitter();
+  @Output() rmvFromCart = new EventEmitter();
+  @Output() deleteFromCart = new EventEmitter();
+  placesBooked: number;
+  raiting: number;
   constructor() { }
 
   ngOnInit(): void {
+    this.raiting = this.trip.raiting
+    this.placesBooked = this.trip.places
   }
+
+
 
   addReservation(){
     if(this.placesBooked == 0){
       this.updateBookedTrips.emit(1);
     }
     this.placesBooked += 1;
+    this.trip.places += 1;
+    this.addToCart.emit(this.trip);
   }
 
   rmvReservation(){
     this.placesBooked -=1;
+    this.rmvFromCart.emit(this.trip);
     if(this.placesBooked == 0){
       this.updateBookedTrips.emit(-1);
     }
@@ -73,12 +85,22 @@ export class TripComponent implements OnInit {
   deleteTrip(){
     if(this.placesBooked > 0){
       this.updateBookedTrips.emit(-1);
+      this.deleteFromCart.emit([this.trip, this.placesBooked]);
     }
-      trips.splice(this.index, 1)
+    for(let t in trips){
+      if(trips[t] == this.trip){
+        trips.splice(parseInt(t),1)
+      }
+    }
   }
 
   updateRaiting(cnt){
-    this.raiting = cnt;
+    for(let t in trips){
+      if (trips[t] == this.trip){
+        trips[t].raiting = cnt;
+      }
+    }
+
   }
 
 

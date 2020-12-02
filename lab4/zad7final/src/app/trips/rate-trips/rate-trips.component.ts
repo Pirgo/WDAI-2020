@@ -15,6 +15,7 @@ export class RateTripsComponent implements OnInit {
   }
 
   updateRaiting(starCnt){
+    console.log('assdasdasd')
     this.currentRateChange.emit(starCnt);
   }
 }

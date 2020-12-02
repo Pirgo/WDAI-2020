@@ -1,7 +1,16 @@
 
 <!-- <router-outlet></router-outlet> -->
 <app-booked-trips [counter]="bookedTrips"></app-booked-trips>
+<app-cart [cart]="cart" [cartSum]="cartSum"></app-cart>
+<app-filtr-trips (filterTabEmit)="updateFilterTab($event)"></app-filtr-trips>
 <div class="flex-container">
-  <app-trip class="flex-item" *ngFor="let trip of trips; index as i" [ngStyle]="maxOrMin(trip)" [trip]="trip" [index]="i" (updateBookedTrips)=updatebookedTrips($event)></app-trip>
+  <app-trip class="flex-item" 
+  *ngFor="let trip of gettrips() ; index as i" 
+  [ngStyle]="maxOrMin(trip)" [trip]="trip" 
+  [index]="i" 
+  (updateBookedTrips)=updatebookedTrips($event) 
+  (addToCart)=addToCart($event) 
+  (rmvFromCart)=rmvFromCart($event) 
+  (deleteFromCart)=deleteFromCart($event)></app-trip>
 </div>
 <app-add-trip></app-add-trip>

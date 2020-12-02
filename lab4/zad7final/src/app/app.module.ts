@@ -9,6 +9,8 @@ import { BookedTripsComponent } from './trips/booked-trips/booked-trips.componen
 import { AddTripComponent } from './trips/add-trip/add-trip.component';
 import { RateTripsComponent } from './trips/rate-trips/rate-trips.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FiltrTripsComponent } from './trips/filtr-trips/filtr-trips.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BookedTripsComponent,
     AddTripComponent,
     RateTripsComponent,
+    FiltrTripsComponent,
+    CartComponent,
     
   ],
   imports: [

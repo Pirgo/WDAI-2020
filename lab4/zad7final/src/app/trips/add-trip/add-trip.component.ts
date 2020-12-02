@@ -8,8 +8,8 @@ import {trips} from '../../trips'
 })
 export class AddTripComponent implements OnInit {
   tripForm : FormGroup;
-  // trips = trips;
-  begindate: string
+  dateSent = new Date;
+  dateSent2 = new Date;
   constructor(private formBuilder : FormBuilder) { }
 
   ngOnInit(): void {
@@ -22,26 +22,22 @@ export class AddTripComponent implements OnInit {
       price: ['', Validators.required],
       maxCapacity: ['', Validators.required],
       description: ['', Validators.required],
-      imgURL: ['', Validators.required]
+      imgURL: ['', Validators.required],
+      raiting: 1,
+      places: 0
       
     })
     this.tripForm.markAsUntouched();
   }
 
-  getBeginDateAndValid(form){
-    let begin = form.get('beginDate').value
-    let end = form.get('endDate').value
-    if((end != '' || end != null) && (begin != '' || begin !=null)){
-      return !form.valid || !(begin < end)
-    }
-    return !form.valid
-    
-    
-  }
   onSubmit(form){
     trips.push(form.value)
     this.tripForm.reset();
     console.log(trips);
+  }
+
+  dateBeginChange(e: any) {
+    this.dateSent2 = e.target.value;
   }
 
   

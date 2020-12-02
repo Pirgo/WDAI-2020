@@ -1,6 +1,6 @@
 <div class="header">
     <h2 class="header-item">{{trip.name | uppercase}}</h2>
-    <app-rate-trips [(currentRate)]="raiting"></app-rate-trips>
+    <app-rate-trips [(currentRate)]="raiting" (currentRateChange) = "updateRaiting($event)"></app-rate-trips>
 </div>
 <div class="text-centered">
     <h3>{{trip.destination | uppercase}}</h3>

@@ -1,0 +1,34 @@
+<h1>Filtr by:</h1>
+<div class="flex-container">
+    <div>
+        <h2>Destination</h2>
+            <li *ngFor="let trip of getDestinations()">
+                <input type="checkbox" (change)="addDestination($event)">{{trip}}
+            </li>
+    </div>
+    <div>
+        <h2>Price</h2>
+        <label>Min price: {{priceFilterMin | currency}}</label><br>
+        <input type="range" min="{{minPrice}}" max="{{priceFilterMax}}" (input)="updateMinPrice($event)" value="{{priceFilterMin}}"><br>
+        <label>Max price: {{priceFilterMax | currency}}</label><br>
+        <input type="range" min="{{priceFilterMin}}" max="{{maxPrice}}" (input)=updateMaxPrice($event) value="{{priceFilterMax}}"><br>
+    </div>
+    <div>
+        <h2>Raiting</h2>
+        <li><input type="checkbox" (change)="addRaiting($event)">&#9733;</li>
+        <li><input type="checkbox" (change)="addRaiting($event)">&#9733;&#9733;</li>
+        <li><input type="checkbox" (change)="addRaiting($event)">&#9733;&#9733;&#9733;</li>
+        <li><input type="checkbox" (change)="addRaiting($event)">&#9733;&#9733;&#9733;&#9733;</li>
+        <li><input type="checkbox" (change)="addRaiting($event)">&#9733;&#9733;&#9733;&#9733;&#9733;</li>
+    </div>
+    <div>
+        <h2>Date</h2>
+        <label>Begin date</label><br>
+        <input type="date" name="beginDate" placeholder="dd.mm.yyyy" (change)=beginDateChange($event) min="{{dateSent|date:'yyyy-mm-dd'}}" max="{{dateFilterEnd|date:'yyyy-mm-dd'}}"><br>
+        <label>End date</label><br>
+        <input type="date" name="endDate" placeholder="dd.mm.yyyy" (change)=endDateChange($event) min="{{dateSent2 | date: 'yyyy-mm-dd'}}"><br >
+    </div>
+</div>
+
+
+

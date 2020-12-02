@@ -1,0 +1,7 @@
+<ul>
+    <li *ngFor="let trip of cart">{{trip.name}}  {{trip.counter}}</li>
+</ul>
+
+<div>
+    {{cartSum | currency}}
+</div>
