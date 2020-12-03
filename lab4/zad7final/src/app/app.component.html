@@ -5,9 +5,8 @@
 <app-filtr-trips (filterTabEmit)="updateFilterTab($event)"></app-filtr-trips>
 <div class="flex-container">
   <app-trip class="flex-item" 
-  *ngFor="let trip of gettrips() ; index as i" 
+  *ngFor="let trip of gettrips()" 
   [ngStyle]="maxOrMin(trip)" [trip]="trip" 
-  [index]="i" 
   (updateBookedTrips)=updatebookedTrips($event) 
   (addToCart)=addToCart($event) 
   (rmvFromCart)=rmvFromCart($event) 

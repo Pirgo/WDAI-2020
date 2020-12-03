@@ -13,10 +13,10 @@ export class BookedTripsComponent implements OnInit {
 
   setBackground(){
     let myStyles = {
-      'background' : 'red',
+      'background' : '#dc3545',
     }
     if (this.counter > 10){
-      myStyles = {'background' : 'green'}
+      myStyles = {'background' : '#28a745'}
     }
     return myStyles;
   }

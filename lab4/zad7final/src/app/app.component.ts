@@ -65,14 +65,14 @@ export class AppComponent {
   }
 
   maxOrMin(trip){
-    let min:number  = trips[0].price;
-    let max:number = trips[0].price;
-    for(let trip of trips){
-      if(min > trip.price){
-        min = trip.price;
+    let min:number  = this.trips[0].price;
+    let max:number = this.trips[0].price;
+    for(let t of this.trips){
+      if(min > t.price){
+        min = t.price;
       }
-      if(max < trip.price){
-        max = trip.price;
+      if(max < t.price){
+        max = t.price;
       }
     }
     if(trip.price == min){
@@ -89,6 +89,7 @@ export class AppComponent {
   }
 
   filterByDest(destinations){
+    // console.log(trips)
     let res = [];
     for(let dest of destinations){
       for(let trip of trips){
@@ -128,11 +129,11 @@ export class AppComponent {
     }
 
     if(this.filterTab[2] > 0){
-      console.log(this.trips)
+      // console.log(this.trips)
       this.trips = this.trips.filter(trip=>{
         return trip.price <= this.filterTab[2]
       })
-      console.log('lld')
+      // console.log('lld')
     }
 
     if(this.filterTab[3].length != 0){
@@ -150,12 +151,6 @@ export class AppComponent {
         return trip.endDate <= this.filterTab[5]
       })
     }
-    // this.trips = trips.filter(trip => {
-    //   return trip.destination.includes()
-    // })
-    // this.trips = trips.filter(trip=>{
-    //   return trip.destination.includes(what);
-    // })
     return this.trips;
   }
 }

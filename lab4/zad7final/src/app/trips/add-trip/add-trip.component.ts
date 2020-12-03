@@ -20,18 +20,19 @@ export class AddTripComponent implements OnInit {
       beginDate: ['', Validators.required],
       endDate: ['', Validators.required],
       price: ['', Validators.required],
-      maxCapacity: ['', Validators.required],
+      maxCapacity: ['', [Validators.required, Validators.min(1)]],
       description: ['', Validators.required],
       imgURL: ['', Validators.required],
       raiting: 1,
       places: 0
-      
     })
     this.tripForm.markAsUntouched();
   }
 
-  onSubmit(form){
-    trips.push(form.value)
+  onSubmit(){
+    this.tripForm.value.places = 0;
+    this.tripForm.value.raiting = 1;
+    trips.push(this.tripForm.value)
     this.tripForm.reset();
     console.log(trips);
   }

@@ -49,32 +49,57 @@ export class FiltrTripsComponent implements OnInit {
     this.setPriceRange();
   }
 
+  updateMinMax(){
+    let min:number = 999999
+    let max:number = 0
+    for(let trip of trips){
+      if(min > trip.price){
+        min = trip.price
+      }
+      if(max < trip.price){
+        max = trip.price
+      }
+    }
+    if(this.minPrice < min){
+      this.priceFilterMin = min
+    }
+    if(this.maxPrice > max){
+      this.priceFilterMax = max
+    }
+    if(min == 999999 && max == 0){
+      return
+    }
+    this.minPrice = min
+    this.maxPrice = max
+    
+    
+  }
+
 
   getDestinations(){
     let res = [];
     for(let trip of this.trips){
       if(!res.includes(trip.destination)) res.push(trip.destination)
     }
+    this.updateMinMax()
     return res;
   }
 
 
   addDestination(event){
-    // console.log(event.target.checked);
     if(event.target.checked){
-      this.destinationFilter.push(event.target.parentNode.innerText)
+      this.destinationFilter.push(event.target.value)
       console.log(this.destinationFilter)
     }
     else{
       console.log('d')
       this.destinationFilter = this.destinationFilter.filter(filt => {
-        return filt != event.target.parentNode.innerText
+        return filt != event.target.value
       })
     }
     this.filterTab = [this.destinationFilter, this.priceFilterMin, this.priceFilterMax, this.raitingFilter, this.dateFilterBegin, this.dateFilterEnd]
     this.filterTabEmit.emit(this.filterTab)
-    // console.log(this.destinationFilter)
-    // console.log(this.filterTab)
+
   }
 
 
@@ -108,15 +133,13 @@ export class FiltrTripsComponent implements OnInit {
 
   beginDateChange(event){
     this.dateFilterBegin = event.target.value
-    this.dateSent2 = event.target.values
-    // console.log(this.dateFilterBegin)
+    this.dateSent2 = event.target.value
     this.filterTab = [this.destinationFilter, this.priceFilterMin, this.priceFilterMax, this.raitingFilter, this.dateFilterBegin, this.dateFilterEnd]
     this.filterTabEmit.emit(this.filterTab)
   }
 
   endDateChange(event){
     this.dateFilterEnd = event.target.value
-    // console.log(this.dateFilterEnd)
     this.filterTab = [this.destinationFilter, this.priceFilterMin, this.priceFilterMax, this.raitingFilter, this.dateFilterBegin, this.dateFilterEnd]
     this.filterTabEmit.emit(this.filterTab)
   }
