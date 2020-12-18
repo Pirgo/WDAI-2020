@@ -29,6 +29,7 @@ export class PostsListComponent implements OnInit {
 
     this.apiService.postPost(post).subscribe(data =>{
       this.addedPost = data
+      this.posts.push(this.addedPost)
     })
 
   }
