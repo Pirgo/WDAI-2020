@@ -1,0 +1,14 @@
+li{
+    list-style-type: none;
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 5vw;
+}
+
+input{
+    margin-left: 2px;
+}

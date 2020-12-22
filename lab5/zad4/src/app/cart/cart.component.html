@@ -1,0 +1,6 @@
+<h2>Cart:</h2>
+<ol>
+    <li *ngFor="let cartElement of this.cartService.items">{{cartElement.name | titlecase}} ({{cartElement.places}})</li>
+</ol>
+<h1>Sum: {{getCostSum() | currency}}</h1>
+
