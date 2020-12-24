@@ -1,0 +1,7 @@
+<app-filtr-trip [trips]="trips" (filterTabEmit)="updateFilterTab($event)"></app-filtr-trip>
+<div class="flex-container">
+    <div *ngFor="let trip of tripsFiltered">
+        <app-trip-banner class="flex-item" [trip]="trip"></app-trip-banner>
+    </div>
+</div>
+

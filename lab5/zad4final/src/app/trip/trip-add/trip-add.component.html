@@ -1,0 +1,48 @@
+<div class="center">
+    <form [formGroup]="tripForm" (submit)="onSubmit()">
+        <div>
+            <label>Name:</label><br>
+            <input class="center-input" id="name" name="name" formControlName="name">
+        </div>
+        <p *ngIf = "tripForm.get('name').touched && tripForm.get('name').invalid" style="color: red;">Name is required</p>
+        <div>
+            <label>Destination:</label><br>
+            <input class="center-input" name="destination" formControlName="destination">
+        </div>
+        <p *ngIf = "tripForm.get('destination').touched && tripForm.get('destination').invalid" style="color: red;">Destination is required</p>
+        <div>
+            <label>Begin of the trip:</label><br>
+            <input class="center-input"  type="date" name="beginDate" formControlName="beginDate" placeholder="dd.mm.yyyy" (change)="dateBeginChange($event)"
+            min="{{dateSent|date:'yyyy-MM-dd'}}" 
+            max="{{tripForm.value.endDate|date:'yyyy-MM-dd'}}" 
+            onkeydown="return false">
+        </div>
+        <p *ngIf = "tripForm.get('beginDate').touched && tripForm.get('beginDate').invalid" style="color: red;">Begin date is required</p>
+        <div>
+            <label>End of the trip:</label><br>
+            <input class="center-input" type="date" name="endDate" formControlName="endDate" placeholder="dd.mm.yyyy" min="{{dateSent2|date:'yyyy-MM-dd'}}" onkeydown="return false">
+        </div>
+        <p *ngIf = "tripForm.get('endDate').touched && tripForm.get('endDate').invalid" style="color: red;">End date is required</p>
+        <div>
+            <label>Price:</label><br>
+            <input  class="center-input" type="number" name="price" formControlName="price">
+        </div>
+        <p *ngIf = "tripForm.get('price').touched && tripForm.get('price').invalid" style="color: red;">Price is required</p>
+        <div>
+            <label>Capacity:</label><br>
+            <input class="center-input" type="number" name="maxCapacity" formControlName="maxCapacity">
+        </div>
+        <p *ngIf = "tripForm.get('maxCapacity').touched && tripForm.get('maxCapacity').invalid" style="color: red;">Capacity is required and must be above 0</p>
+        <div>
+            <label>Description:</label><br>
+            <textarea class="center-input" name="description" cols="25" rows="10" formControlName="description"></textarea>
+        </div>
+        <p *ngIf = "tripForm.get('description').touched && tripForm.get('description').invalid" style="color: red;">Description is required</p>
+        <div>
+            <label>IMG URL:</label><br>
+            <input class="center-input" name="imgURL" formControlName="imgURL">
+        </div>
+        <p *ngIf = "tripForm.get('imgURL').touched && tripForm.get('imgURL').invalid" style="color: red;">IMG URL is required</p>
+        <button class="btn1" type="submit" [disabled]="!tripForm.valid">SUBMIT</button>
+    </form>
+</div>
