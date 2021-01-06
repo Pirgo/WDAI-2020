@@ -23,16 +23,16 @@ export class TripListComponent implements OnInit, OnDestroy {
       this.trips = trips
       )
     this.tripsFilteredSubscriber=this.tripService.getTripsList().subscribe(trips =>
-      this.tripsFiltered = trips.filter(trip=>this.lolo(trip)))
+      this.tripsFiltered = trips.filter(trip=>this.filtrTrips(trip)))
     
     
   }
 
   applyFilter(){
-    this.tripsFiltered = this.trips.filter(trip=>this.lolo(trip))
+    this.tripsFiltered = this.trips.filter(trip=>this.filtrTrips(trip))
   }
 
-  lolo(data){
+  filtrTrips(data){
     console.log(data)
     let matchDest: boolean;
     let matchPrice: boolean;

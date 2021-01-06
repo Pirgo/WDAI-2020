@@ -23,7 +23,7 @@ export class CartService {
       map(changes => 
         changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
       )
-    ).subscribe(trips =>{
+    ).subscribe(trips =>{ 
       this.items = trips;
     })
 
@@ -31,6 +31,7 @@ export class CartService {
       map(changes=>
         changes.map(c => ({ key: c.payload.key, ...c.payload.val() })))
     )
+    
    }
 
    addToCart(cartElement: CartElement){
